@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "exec-php": "^0.0.6",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "html5-qrcode": "^2.3.8"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "harekrishna",
+  "version": "1.0.0",
+  "main": "demo_db.js",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

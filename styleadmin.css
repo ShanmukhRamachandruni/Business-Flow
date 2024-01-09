@@ -1,0 +1,41 @@
+
+h1{
+    color: red;
+}
+
+.table {
+  top: 0;
+  width: 100%;
+}
+
+
+body{
+  overflow: hidden;
+}
+.container{
+  margin-top: 50px;
+  padding: 0px 20px;
+  overflow-y: auto; /* make the table scrollable if height is more than 200 px  */
+  height: 300px; 
+  max-height: 300px;
+}
+.selection{
+  display: block;
+}
+
+.container thead th {
+  position: sticky; /* make the table heads sticky */
+  top: 0px;
+   /* table head will be placed from the top of the table and sticks to it */
+}
+table{
+  border-collapse: collapse;
+  top: 0;
+}
+th,
+td {
+  padding: 5px 10px;
+ }
+th {
+        background: #eee;
+}

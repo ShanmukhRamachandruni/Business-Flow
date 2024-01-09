@@ -1,0 +1,11 @@
+SELECT SUM(CASE 
+               WHEN ItemCode = 'RM030' THEN cost * 2
+           WHEN ItemCode = 'RM031' THEN cost * 0.1
+           WHEN ItemCode = 'RM032' THEN cost * 0.1
+           WHEN ItemCode = 'RM033' THEN cost * 0.05
+           WHEN ItemCode = 'RM034' THEN cost * 1.5
+              
+               ELSE 0
+          END) AS total_sum
+FROM raw_materials
+WHERE ItemCode IN ('RM030','RM031','RM032','RM033','RM034');

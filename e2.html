@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Include Google Charts library -->
+    <style>
+
+        h1{
+
+        }
+        h2{
+
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+    <!-- Container for the chart -->
+    <div id="chart_div"></div>
+
+    <script type="text/javascript">
+        // Load the Google Charts library
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Callback function to draw the chart
+        function drawChart() {
+            // Fetch the JSON data using AJAX
+            fetch('data.json')
+                .then(response => response.json())
+                .then(jsonData => {
+                    // Parse the JSON data
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Category');
+                    data.addColumn('number', 'Value');
+
+                    // Add data rows
+                    jsonData.forEach(item => {
+                        data.addRow([item.Category, item.Value]);
+                    });
+
+                    // Define chart options
+                    var options = {
+                        title: 'Chart Title'
+                    };
+
+                    // Instantiate and draw the chart
+                    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON:', error);
+                });
+        }
+    </script>
+</body>
+</html>
